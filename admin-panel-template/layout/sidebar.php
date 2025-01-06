@@ -19,7 +19,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2 text-secondary"
-                        href="../admin-panel-template/index.php">
+                        href="/phpproject/admin-panel-template/index.php">
                         <i
                             class="bi bi-house-fill fs-4 text-secondary"></i>
                         <span class="fw-bold">داشبورد</span>
@@ -27,9 +27,8 @@
                 </li>
 
                 <li class="nav-item">
-                 <a class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2"
-                  href="pages/posts/index.php">
-
+                    <a class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2"
+                        href="/phpproject/admin-panel-template/pages/posts/index.php">
                         <i class="bi bi-file-earmark-image-fill fs-4 text-secondary"></i>
                         <span class="fw-bold">مقالات</span>
                     </a>
@@ -38,7 +37,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2"
-                        href="pages/categories/index.php">
+                        href="/phpproject/admin-panel-template/pages/categories/index.php">
                         <i
                             class="bi bi-folder-fill fs-4 text-secondary"></i>
 
@@ -49,7 +48,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2"
-                        href="pages/comments/index.php">
+                        href="/phpproject/admin-panel-template/pages/comments/index.php">
                         <i
                             class="bi bi-chat-left-text-fill fs-4 text-secondary"></i>
 
@@ -60,7 +59,7 @@
                 <li class="nav-item">
                     <a
                         class="nav-link link-body-emphasis text-decoration-none d-flex align-items-center gap-2"
-                        href="#">
+                        href="/phpproject/admin-panel-template/auth/login.php">
                         <i
                             class="bi bi-box-arrow-right fs-4 text-secondary"></i>
 

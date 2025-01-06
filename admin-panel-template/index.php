@@ -22,11 +22,14 @@ if (isset($_GET['action']) && isset($_GET['entity']) && isset($_GET['id'])) {
     }
 
     // برای ویرایش پست
-    if ($_GET['action'] == 'edit' && $_GET['entity'] == 'posts') {
-        $post_sql = $conn->prepare("UPDATE `posts` SET `status` = '1' WHERE `id` = :id");
-        $query1 = $post_sql->execute(['id' => $_GET['id']]);
+    $categories = $conn->query("SELECT * FROM `categories`");
+    if (isset($_GET['id'])) {
+        $posts = $conn->prepare("SELECT * FROM `posts` WHERE `id`=:id");
+        $posts->execute(['id' => $_GET['id']]);
+        $post = $posts->fetch();
     }
 }
+
 
 
 
@@ -92,7 +95,7 @@ $posts = $conn->query("SELECT * FROM `posts` ORDER BY id DESC LIMIT 3");
                                     <td><?= $post['title']; ?></td>
                                     <td><?= $post['author']; ?></td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-dark">ویرایش</a>
+                                        <a href="pages/posts/edit.php" class="btn btn-sm btn-outline-dark">ویرایش</a>
                                         <a href="?action=delete&entity=posts&id=<?= $post['id'] ?>" class="btn btn-sm btn-outline-danger">حذف</a>
                                     </td>
                                 </tr>
@@ -147,35 +150,35 @@ $posts = $conn->query("SELECT * FROM `posts` ORDER BY id DESC LIMIT 3");
 
             <!-- Categories -->
             <div class="mt-4">
-    <h4 class="text-secondary fw-bold">دسته بندی‌ها</h4>
-    <div class="table-responsive small">
-        <table class="table table-hover align-middle">
-            <thead>
-                <tr>
-                    <th>id</th>
-                    <th>عنوان</th>
-                    <th>عملیات</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $categories = $conn->query("SELECT * FROM `categories` ORDER BY id DESC");
-                foreach ($categories as $category): ?>
-                    <tr>
-                        <th><?= $category['id']; ?></th>
-                        <td><?= $category['title']; ?></td>
-                        <td>
-                            <a href="?action=edit&entity=categories&id=<?= $category['id'] ?>" class="btn btn-sm btn-outline-dark">ویرایش</a>
-                            <a href="?action=delete&entity=categories&id=<?= $category['id'] ?>" class="btn btn-sm btn-outline-danger">حذف</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+                <h4 class="text-secondary fw-bold">دسته بندی‌ها</h4>
+                <div class="table-responsive small">
+                    <table class="table table-hover align-middle">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>عنوان</th>
+                                <th>عملیات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $categories = $conn->query("SELECT * FROM `categories` ORDER BY id DESC");
+                            foreach ($categories as $category): ?>
+                                <tr>
+                                    <th><?= $category['id']; ?></th>
+                                    <td><?= $category['title']; ?></td>
+                                    <td>
+                                        <a href="pages/categories/edit.php" class="btn btn-sm btn-outline-dark">ویرایش</a>
+                                        <a href="?action=delete&entity=categories&id=<?= $category['id'] ?>" class="btn btn-sm btn-outline-danger">حذف</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
 
 
-</div>
+            </div>
 
 
 
