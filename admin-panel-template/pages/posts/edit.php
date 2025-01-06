@@ -81,8 +81,8 @@ and !empty(trim($_FILES['image']['name'])) and !empty(trim($_POST['body']))){
                                 <label class="form-label">نویسنده مقاله</label>
                                 <input
                                     type="text"
-                                    name = "auther"
-                                    value = "<?=$post['auther'] ?>"
+                                    name = "author"
+                                    value = "<?=$post['author'] ?>"
                                     class="form-control"
                                     value="علی شیخ"
                                 />

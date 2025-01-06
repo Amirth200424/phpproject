@@ -42,7 +42,7 @@
                                     <tr>
                                         <th><?=$post['id'] ?></th>
                                         <td><?=$post['title'] ?></td>
-                                        <td><?=$post['auther'] ?></td>
+                                        <td><?=$post['author'] ?></td>
                                         <td>
                                             <a
                                                 href="./edit.php?id=<?=$post['id'] ?>"

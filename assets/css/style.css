@@ -69,3 +69,9 @@ body {
         height: 450px;
     }
 }
+.card-img-top {
+    height: 200px; /* یا هر مقدار دلخواه */
+    object-fit: cover; /* برای برش تصاویر متناسب */
+}
+
+
